@@ -2,7 +2,7 @@
 Operator backpropagation
 ########################
 
-Operator backpropagation (OBP) is a technique for propagating an observable backward through gates at the end of a quantum circuit. This results in a more shallow circuit at the cost of an increase in observable measurement bases. As one backpropagates an operator further through a circuit, the size of the observable grows exponentially, resulting in both a classical and quantum resource overhead. However, for some circuits, the resulting distribution of Pauli observables is more concentrated than the worst-case exponential scaling, meaning that some terms in the Hamiltonian with small coefficients can be truncated to reduce the quantum overhead. The error incurred by doing this can be controlled to find a suitable tradeoff between precision and efficiency.
+This package implements operator backpropagation (OBP) for reducing depth of circuits in expectation value calculations. This technique propagates an observable backward through gates at the end of a quantum circuit, which results in a more shallow circuit at the cost of an increase in observable measurement bases. As one backpropagates an operator further through a circuit, the size of the observable grows exponentially, resulting in both a classical and quantum resource overhead. However, for some circuits, the resulting distribution of Pauli observables is more concentrated than the worst-case exponential scaling, meaning that some terms in the Hamiltonian with small coefficients can be truncated to reduce the quantum overhead. The error incurred by doing this can be controlled to find a suitable tradeoff between precision and efficiency.
 
 There are a number of ways in which operator backpropagation can be performed, this package uses a method based on Clifford perturbation theory, which has the benefit that the overhead incurred by backpropagating various gates is determined by the non-Cliffordness of that gate. This leads to an increased efficiency for some families of circuits relative to tensor-network based methods for OBP, which currently have high classical overheads even in cases where the quantum overhead remains tame.
 
@@ -11,7 +11,7 @@ This package is suitable for estimating expectation values of general quantum ci
 Getting started
 ---------------
 
-A simple guide to help you get started quickly with this package is available in the :doc:`quick start guide <guides/quickstart>`.
+A simple guide to help you get started quickly with this package is available in the :doc:`quickstart guide <guides/quickstart>`.
 
 Use case examples
 -----------------
